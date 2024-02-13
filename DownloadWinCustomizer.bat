@@ -2,10 +2,10 @@
 setlocal enabledelayedexpansion
 mode 60,20
 
-echo ==================
-echo      [1] GUI
-echo      [2] Script
-echo ==================
+echo ==============================
+echo   [1] EXE (maggiore grafica)
+echo   [2] Script
+echo ==============================
 choice /C:12 /N /M "Digita un numero: "
 if "%errorlevel%" equ "2" ( goto :wincscript )
 if "%errorlevel%" equ "1" ( goto :wincgui )

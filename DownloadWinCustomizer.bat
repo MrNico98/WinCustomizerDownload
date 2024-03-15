@@ -3,20 +3,10 @@ setlocal enabledelayedexpansion
 mode 60,20
 
 echo ==============================
-echo   [1] EXE (maggiore grafica)
-echo   [2] Script
+echo   [1] Script
 echo ==============================
-choice /C:12 /N /M "Digita un numero: "
-if "%errorlevel%" equ "2" ( goto :wincscript )
-if "%errorlevel%" equ "1" ( goto :wincgui )
-
-:wincgui
-powershell write-host -fore red "Disabilita il tuo antivirus poi premi [y] per continuare"
-choice /C:Y /N
-if "%errorlevel%" equ "1" (
-powershell -command "irm -Uri https://bit.ly/WinCustomizerExe | iex"
-)
-goto :end
+choice /C:1 /N /M "Digita un numero: "
+if "%errorlevel%" equ "" ( goto :wincscript )
 
 :wincscript
 powershell -command "irm -Uri https://bit.ly/WinCustomizer | iex"
